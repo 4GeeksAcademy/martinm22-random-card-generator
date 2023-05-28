@@ -1,9 +1,17 @@
 /* eslint-disable */
+import { Button } from "bootstrap";
 import "./style.css";
 
 window.onload = () => {
   document.querySelector(".card").classList.add(generateRandomSuit());
   document.querySelector(".card").innerHTML = generateRandomNumber();
+};
+
+let change = () => {
+  document.querySelector(".card").innerHTML = generateRandomNumber();
+};
+document.getElementById("boton").onclick = () => {
+  change();
 };
 
 let generateRandomNumber = () => {
