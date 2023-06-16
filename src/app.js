@@ -2,17 +2,25 @@
 import { Button } from "bootstrap";
 import "./style.css";
 
+let card = document.querySelector(".card");
+
 window.onload = () => {
-  document.querySelector(".card").classList.add(generateRandomSuit());
-  document.querySelector(".card").innerHTML = generateRandomNumber();
+  card.classList.add(generateRandomSuit());
+  card.innerHTML = generateRandomNumber();
 };
 
 let change = () => {
-  document.querySelector(".card").innerHTML = generateRandomNumber();
+  card.classList.remove("diamond", "heart", "club", "spade");
+  card.classList.add(generateRandomSuit());
+  card.innerHTML = generateRandomNumber();
 };
 document.getElementById("boton").onclick = () => {
   change();
 };
+
+setInterval(() => {
+  change();
+}, 10000);
 
 let generateRandomNumber = () => {
   let numbers = [
